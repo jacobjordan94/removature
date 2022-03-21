@@ -1,14 +1,9 @@
-import 'emoji-log';
 import browser from 'webextension-polyfill';
 
-browser.runtime.onInstalled.addListener(() => {
-  console.emoji('🦄', 'onInstalled....');
-});
-
-browser.runtime.onMessage.addListener((_request, _sender, _sendResponse) => {
-  // Do something with the message!
-  // alert(request.url);
-
-  // And respond back to the sender.
-  return Promise.resolve('got your message, thanks!');
+browser.runtime.onMessage.addListener((message) => {
+  if(message.request == 'get-tab') {
+    return browser.tabs.query({ active: true, windowId: browser.windows.WINDOW_ID_CURRENT })
+      .then(tab => tab[0].url);
+  }
+  return Promise.resolve("Got your message, thanks!");
 });

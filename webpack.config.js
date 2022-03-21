@@ -56,8 +56,8 @@ module.exports = {
     manifest: './source/manifest.json',
     background: './source/scripts/background.js',
     contentScript: './source/scripts/contentScript.js',
-    popup: './source/scripts/popup.js',
-    options: './source/scripts/options.js',
+    // popup: './source/scripts/popup.js',
+    // options: './source/scripts/options.js',
   },
 
   output: {
@@ -148,21 +148,21 @@ module.exports = {
       verbose: true,
     }),
     // write css file(s) to build folder
-    new MiniCssExtractPlugin({filename: 'css/[name].css'}),
-    new HtmlWebpackPlugin({
-      template: 'source/options.html',
-      inject: 'body',
-      hash: true,
-      chunks: ['options'],
-      filename: 'options.html',
-    }),
-    new HtmlWebpackPlugin({
-      template: 'source/popup.html',
-      inject: 'body',
-      hash: true,
-      chunks: ['popup'],
-      filename: 'popup.html',
-    }),
+    // new MiniCssExtractPlugin({filename: 'css/[name].css'}),
+    // new HtmlWebpackPlugin({
+    //   template: 'source/options.html',
+    //   inject: 'body',
+    //   hash: true,
+    //   chunks: ['options'],
+    //   filename: 'options.html',
+    // }),
+    // new HtmlWebpackPlugin({
+    //   template: 'source/popup.html',
+    //   inject: 'body',
+    //   hash: true,
+    //   chunks: ['popup'],
+    //   filename: 'popup.html',
+    // }),
     // copy static assets
     new CopyWebpackPlugin({
       patterns: [{from: 'source/assets', to: 'assets'}],
