@@ -23,13 +23,11 @@ window.onload = function() {
     /**
      * @returns {Promise<number>}
      */
-    function main() {
-        return browser.runtime.sendMessage(null, { request: "get-tab" }, null)
-            .then(tab => {
-                switch(true) {
-                    case (tab.indexOf("indeed.com") > -1): return Indeed.removeElems();
-                    default: return Promise.reject(new Error("Removature Error: Could not match url to supported site."))
-                }
-            });
+    function main() {      
+        let host = document.location.host;
+        switch(true) {
+            case (host.indexOf("indeed.com") > -1): return Indeed.removeElems();
+        }
+        return Promise.reject(new Error("Removature Error: Could not match url to supported site."));
     }
 }
