@@ -16,5 +16,7 @@
 3. #### Watch files with `yarn run dev:chrome`, `yarn run dev:firefox`, or `yarn run dev:opera`
 4. #### Build using `yarn run build`
 ---
+##### Based on [web-extension-starter](https://github.com/abhijithvijayan/web-extension-starter.git) by [abhijithvijayan](https://abhijithvijayan.in)
+---
 ## License
 ##### MIT © [jacobjordan94](https://github.com/jacobjordan94)
