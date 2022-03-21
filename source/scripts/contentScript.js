@@ -1,6 +1,4 @@
-import browser from 'webextension-polyfill';
 import { Indeed } from './sites/indeed';
-
 
 window.onload = function() {
     
