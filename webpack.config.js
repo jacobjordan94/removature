@@ -165,7 +165,15 @@ module.exports = {
     // }),
     // copy static assets
     new CopyWebpackPlugin({
-      patterns: [{from: 'source/assets', to: 'assets'}],
+      patterns: [
+        {
+          from: 'source/assets', 
+          to: 'assets', 
+          globOptions: {
+            ignore: ['**/icons/icon.psd']
+          }
+        }
+      ],
     }),
     // plugin to enable browser reloading in development mode
     extensionReloaderPlugin,
